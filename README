@@ -19,16 +19,8 @@ necessary as root):
     make clean install
 
 
-Running st
-----------
-If you did not install st with make clean install, you must compile
-the st terminfo entry with the following command:
-
-    tic -sx st.info
-
-See the man page for additional details.
-
-Credits
--------
-Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
-
+#Pathes
+This is my custom fork of st, with some patches applied
+* enter a vim like browse mode witch MOD + c (scroll/search throu history, copy marked text...)
+* new Colorsheme (gruvebox(
+* hide cursor when pressing a key
