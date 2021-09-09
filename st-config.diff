@@ -1,6 +1,11 @@
---- config.def.h	2021-04-16 09:24:00.845320434 +0200
-+++ config.h	2021-05-14 20:07:22.726617637 +0200
-@@ -5,8 +5,8 @@
+--- config.def.h	2021-09-09 23:57:20.214997771 +0200
++++ config.h	2021-09-09 23:57:02.326067371 +0200
+@@ -1,12 +1,12 @@
+-/* See LICENSE file for copyright and license details. */
++ /* See LICENSE file for copyright and license details. */
+ 
+ /*
+  * appearance
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
@@ -11,16 +16,19 @@
  
  /*
   * What program is execed by st depends of these precedence rules:
-@@ -91,7 +91,7 @@
+@@ -91,7 +91,10 @@
   *
   *	stty tabs
   */
 -unsigned int tabspaces = 8;
 +unsigned int tabspaces = 4;
++
++/* bg opacity */
++float alpha = 0.8;
  
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
-@@ -125,9 +125,9 @@
+@@ -125,9 +128,9 @@
  unsigned int defaultbg = 0;
  static unsigned int defaultcs = 15;
  static unsigned int defaultrcs = 257;
@@ -32,7 +40,7 @@
  char const wDelS[] = "!\"#$%&'()*+,-./:;<=>?@[\\]^`{|}~", wDelL[] = " \t";
  char *nmKeys [] = {              ///< Shortcusts executed in normal mode
    "R/Building\nN", "r/Building\n", "X/juli@machine\nN", "x/juli@machine\n",
-@@ -135,7 +135,7 @@
+@@ -135,7 +138,7 @@
  };
  unsigned int const amountNmKeys = sizeof(nmKeys) / sizeof(*nmKeys);
  /// Style of the {command, search} string shown in the right corner (y,v,V,/)
@@ -41,7 +49,7 @@
  Glyph style[] = {{' ',ATTR_ITALIC|ATTR_FAINT,15,16}, {' ',ATTR_ITALIC,232,11},
                   {' ', ATTR_ITALIC, 232, 4}, {' ', ATTR_ITALIC, 232, 12}};
  
-@@ -198,13 +198,13 @@
+@@ -198,13 +201,13 @@
  	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
  	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
  	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
