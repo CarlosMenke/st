@@ -20,7 +20,6 @@ necessary as root):
 
 
 # Patches
-------------
 This is my custom fork of st, with some patches applied
 * enter a vim like browse mode witch MOD + c (scroll/search throu history, copy marked text...)
 * new Colorsheme (gruvebox(
