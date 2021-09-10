@@ -1,5 +1,5 @@
---- config.def.h	2021-09-09 23:57:20.214997771 +0200
-+++ config.h	2021-09-09 23:57:02.326067371 +0200
+--- config.def.h	2021-09-10 17:27:19.077642674 +0200
++++ config.h	2021-09-10 17:27:45.442977398 +0200
 @@ -1,12 +1,12 @@
 -/* See LICENSE file for copyright and license details. */
 + /* See LICENSE file for copyright and license details. */
@@ -16,7 +16,7 @@
  
  /*
   * What program is execed by st depends of these precedence rules:
-@@ -91,7 +91,10 @@
+@@ -91,13 +91,16 @@
   *
   *	stty tabs
   */
@@ -24,10 +24,17 @@
 +unsigned int tabspaces = 4;
 +
 +/* bg opacity */
-+float alpha = 0.8;
++float alpha = 0.6;
  
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
+ 
+   /* 8 normal colors */
+-  [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
++  [0] = "#0C0C1D", /* hard contrast: #1d2021 / soft contrast: #32302f */
+   [1] = "#cc241d", /* red     */
+   [2] = "#98971a", /* green   */
+   [3] = "#d79921", /* yellow  */
 @@ -125,9 +128,9 @@
  unsigned int defaultbg = 0;
  static unsigned int defaultcs = 15;
@@ -49,7 +56,7 @@
  Glyph style[] = {{' ',ATTR_ITALIC|ATTR_FAINT,15,16}, {' ',ATTR_ITALIC,232,11},
                   {' ', ATTR_ITALIC, 232, 4}, {' ', ATTR_ITALIC, 232, 12}};
  
-@@ -198,13 +201,13 @@
+@@ -198,15 +201,16 @@
  	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
  	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
  	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
@@ -65,4 +72,7 @@
 +	{ ControlMask,          XK_y,           selpaste,       {.i =  0} },
  	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
  	{ MODKEY,               XK_c,           normalMode,     {.i =  0} },
++	{ TERMMOD,              XK_X,           invert,         { }       },
  };
+ 
+ /*
